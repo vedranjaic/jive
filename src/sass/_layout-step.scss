@@ -1,0 +1,167 @@
+// Step
+// Page introduction
+.page-intro {
+	margin-bottom: $size * 2;
+	.page-intro-title {
+		@include clearfix;
+		text-transform: uppercase;
+		font-weight: normal;
+		font-size: 15px;
+		font-weight: 300;
+		color: $grey;
+	}
+	.page-intro-download {
+		text-transform: none;
+		a {
+			@include transition;
+			color: darken($grey-light, 10%);
+			&:hover,
+			&:focus {
+				color: $brand-blue;
+				text-decoration: none;
+			}
+			.icon {
+				color: $brand-blue;
+			}
+		}
+	}
+}
+.icon-help {
+	@include transition;
+	opacity: 0.3;
+	&:hover,
+	&:focus {
+		opacity: 1;
+	}
+}
+
+// Coaches
+.coaches {
+	.coach {
+		// clear: both;
+		margin-bottom: 10px;
+		a {
+			@include clearfix;
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				.coach-img {
+					border-color: $brand-red-cta;
+				}
+			}
+		}
+	}
+	.coach-name,
+	.coach-title {
+		display: block;
+	}
+	.coach-name {
+		font-weight: bold;
+	}
+	.coach-title {
+		color: $grey;
+	}
+	.coach-img {
+		@include transition;
+		max-width: $size * 2;
+		max-height: $size * 2;
+		border-radius: $size;
+		float: left;
+		border: 1px solid $grey-light;
+		padding: 3px;
+		margin-right: 10px;
+	}
+}
+
+// Page nav
+.page-nav {
+	margin-top: $size * 2;
+	margin-left: -$size;
+	margin-right: -$size;
+	margin-bottom: -$size;
+}
+.page-navigation {
+	@include clearfix;
+	border-top: 1px solid $grey-light;
+	margin-bottom: 0;
+	.previous,
+	.next {
+		&.disabled {
+			a {
+				color: $grey-light;
+				cursor: not-allowed;
+				&:hover,
+				&:focus {
+					.page-next,
+					.page-previous {
+						transform: translateY(0);
+					}
+					.page-previous,
+					.page-next {
+						.page-number {
+							color: $grey-light;
+						}
+					}
+				}
+			}
+		}
+		a {
+			display: block;
+			color: $brand-red;
+			&:hover,
+			&:focus {
+				.page-next,
+				.page-previous {
+					transform: translateY(-10px);
+				}
+				.page-number {
+					color: $grey;
+				}
+			}
+		}
+	}
+	.previous-text,
+	.next-text {
+		display: inline-block;
+		font-size: 1.2em;
+		margin-bottom: 1em;
+	}
+	.previous {
+		border-right: 1px solid $grey-light;
+		padding-top: 20px;
+		padding-left: $size;
+		padding-bottom: $size;
+	}
+	.next {
+		border-right: 1px solid $grey-light;
+		padding-top: 20px;
+		padding-right: $size;
+		padding-bottom: $size;
+	}
+	.page-previous,
+	.page-next {
+		@include clearfix;
+		@include transition;
+		.page-number {
+			@include transition;
+			font-size: 3em;
+			width: 50px;
+			line-height: 0.9em;
+			color: $grey-light;
+		}
+		.page-name {
+			width: 60%;
+			color: $grey;
+		}
+	}
+	.page-previous {
+		.page-number {
+			margin-right: 10px;
+		}
+	}
+	.page-next {
+		.page-number {
+			margin-left: 10px;
+		}
+	}
+}

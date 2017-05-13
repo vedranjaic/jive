@@ -1,0 +1,14 @@
+// Phase
+// Phase steps
+.phase-steps {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	li {
+		background-color: $brand-red;
+		padding: 5px;
+		margin-left: 5px;
+		margin-right: 5px;
+		color: $white;
+	}
+}
