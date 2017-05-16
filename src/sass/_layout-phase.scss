@@ -1,14 +1,64 @@
 // Phase
 // Phase steps
+.phase-steps-title {
+	background-color: $grey-light;
+	padding: 8px 20px;
+	color: $grey-dark-alt;
+	text-transform: uppercase;
+	font-size: 14px;
+}
 .phase-steps {
 	display: flex;
 	align-items: stretch;
 	justify-content: space-between;
 	li {
 		background-color: $brand-red;
-		padding: 5px;
+		padding: 15px 20px;
 		margin-left: 5px;
 		margin-right: 5px;
-		color: $white;
+		position: relative;
+		& > a {
+			display: block;
+			color: $white;
+		}
+		// SVG
+		&:before {
+			content: '';
+			background-image: url(assets/images/arrow-thin-white.svg);
+			background-size: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 10px;
+			@include breakpoint(lg) {
+				width: 8px;
+			}
+		}
+		&:after {
+			content: '';
+			background-image: url(assets/images/arrow-thin-red.svg);
+			background-size: cover;
+			position: absolute;
+			top: 0;
+			left: 100%;
+			bottom: 0;
+			width: 10px;
+			@include breakpoint(lg) {
+				width: 8px;
+			}
+		}
+		&:first-child {
+			margin-left: 0;
+			&:before {
+				background-image: none;
+			}
+		}
+		&:last-child {
+			margin-right: 0;
+			&:after {
+				background-image: none;
+			}
+		}
 	}
 }

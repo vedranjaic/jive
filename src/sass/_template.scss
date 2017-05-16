@@ -1,6 +1,6 @@
 // Template
 body {
-	background-color: $grey-light;
+	// background-color: $grey-light;
 }
 a {
 	color: $brand-blue;
@@ -97,15 +97,20 @@ p {
 // --- [ LAYOUT ]
 // Content
 .content {
+	@include transition;
 	position: relative;
-	padding-top: 20px;
+	padding-top: 40px;
 	padding-left: 30px;
 	padding-right: 30px;
 	padding-bottom: $size;
 	margin-left: $menu-width + 50px;
 	background-color: $white;
-	// Temp
-	max-width: 1024px;
+	.menu-closed & {
+		margin-left: 60px;
+	}
+	.page-content {
+		margin-bottom: $size;
+	}
 }
 
 
@@ -116,6 +121,7 @@ p {
 	margin-right: -30px;
 }
 .table {
+	font-size: 13px;
 	table-layout: fixed;
 	thead {
 		&:first-child {
