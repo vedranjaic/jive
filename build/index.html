@@ -16,7 +16,7 @@
 	<script src="https://use.fontawesome.com/f0f0aa36b2.js"></script>
 	
 </head>
-<body class="menu-open">
+<body class="menu-open @@body-class">
 
 	<!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -24,50 +24,53 @@
 
 	<nav class="nav-master">
 		<ul class="nav nav-tabs">
-			<li role="presentation"><a href="#"><i class="icon fa fa-home"></i> Home</a></li>
-			<li role="presentation" class="active"><a href="#"><i class="icon fa fa-cloud"></i> <span class="visible-lg-inline">Phase </span>1: Activate</a></li>
-			<li role="presentation"><a href="#"><i class="icon fa fa-cloud"></i> <span class="visible-lg-inline">Phase </span>2: Enable</a></li>
-			<li role="presentation"><a href="#"><i class="icon fa fa-cloud"></i> <span class="visible-lg-inline">Phase </span>3: Implement</a></li>
-			<li role="presentation"><a href="#"><i class="icon fa fa-cloud"></i> <span class="visible-lg-inline">Phase </span>4: Handover</a></li>
-			<li role="presentation"><a href="#"><i class="icon fa fa-comments"></i> Oracle EMEA Partner Sales Community</a></li>
-			<li role="presentation"><a href="#" class="toggle-menu"><i class="icon fa fa-ellipsis-v"></i></a></li>
+			<li role="presentation"><a href="#"><i class="icon fa fa-home"></i> <span class="hidden-xs-inline">Home</span></a></li>
+			<li role="presentation" class="@@nav-phase01"><a href="page-phase1.html"><i class="icon fa fa-cloud"></i> <span class="visible-lg-inline">Phase </span>1<span class="hidden-xs-inline">: Activate</span></a></li>
+			<li role="presentation" class="@@nav-phase02"><a href="page-phase2.html"><i class="icon fa fa-cloud"></i> <span class="visible-lg-inline">Phase </span>2<span class="hidden-xs-inline">: Enable</span></a></li>
+			<li role="presentation" class="@@nav-phase03"><a href="page-phase3.html"><i class="icon fa fa-cloud"></i> <span class="visible-lg-inline">Phase </span>3<span class="hidden-xs-inline">: Implement</span></a></li>
+			<li role="presentation" class="@@nav-phase04"><a href="page-phase4.html"><i class="icon fa fa-cloud"></i> <span class="visible-lg-inline">Phase </span>4<span class="hidden-xs-inline">: Handover</span></a></li>
+			<li role="presentation"><a href="#"><i class="icon fa fa-comments"></i> <span class="hidden-xs-inline">Oracle EMEA Partner Sales Community</span></a></li>
+			<!-- <li role="presentation"><a href="#" class="toggle-menu"><i class="icon fa fa-ellipsis-v"></i></a></li> -->
 		</ul>
 	</nav>
 	<nav class="nav-main">
 		<ul id="menu-accordion" class="menu-nav list-unstyled">
 			<li class="menu-item">
+				<a href="#" class="toggle-menu">
+					<span class="menu-item-indicator"><i class="icon fa fa-ellipsis-v"></i></span>
+				</a>
+			</li>
+			<li class="menu-item">
 				<a href="index.html">
 					<span class="menu-item-indicator"><i class="icon fa fa-home"></i></span><span class="menu-item-title">Home</span>
 				</a>
 			</li>
-			<li class="menu-item active">
-				<a href="page-phase.html" aria-expanded="true">
+			<li class="menu-item @@nav-phase01">
+				<a data-toggle="collapse" data-parent="#collapsePhaseOne" href="#collapsePhaseOne" aria-expanded="true">
 					<span class="menu-item-indicator">1</span><span class="menu-item-title">Phase 1: Activate</span>
 				</a>
-				<ol id="collapsePhaseOne" class="submenu-nav collapse in">
-					<li class="submenu-item active"><a href="page-step.html">Kick Off Planning Session</a></li>
-					<li class="submenu-item"><a href="#">Attend Cloud Onboarding Session</a></li>
-					<li class="submenu-item"><a href="#">Finalize Business Plan</a></li>
-					<li class="submenu-item"><a href="#">Decide FSO/Packaged Solutions Model And Target Function</a></li>
-					<li class="submenu-item"><a href="#">Finalize Team Structure And Assign Roles &amp; Resp.</a></li>
-					<li class="submenu-item"><a href="#">Finalize Training Plan</a></li>
-					<li class="submenu-item"><a href="#">Conduct Activate Readiness Checkpoint Review</a></li>
+				<ol id="collapsePhaseOne" class="submenu-nav collapse @@nav-phase01-collapsed">
+					<li class="submenu-item disabled">Kick Off Planning Session</li>
+					<li class="submenu-item @@nav-step02"><a href="page-phase1-step02.html">Attend Cloud Onboarding Session</a></li>
+					<li class="submenu-item @@nav-step03"><a href="page-phase1-step03.html">Finalize Business Plan</a></li>
+					<li class="submenu-item @@nav-step04"><a href="page-phase1-step04.html">Decide FSO/Packaged Solutions Model And Target Function</a></li>
+					<li class="submenu-item @@nav-step05"><a href="page-phase1-step05.html">Finalize Team Structure And Assign Roles &amp; Resp.</a></li>
+					<li class="submenu-item @@nav-step06"><a href="page-phase1-step06.html">Finalize Training Plan</a></li>
 				</ol>
 			</li>
-			<li class="menu-item">
-				<a href="page-phase.html" aria-expanded="false" class="collapsed">
+			<li class="menu-item @@nav-phase02">
+				<a data-toggle="collapse" data-parent="#collapsePhaseTwo" href="#collapsePhaseTwo" aria-expanded="false" class="collapsed">
 					<span class="menu-item-indicator">2</span><span class="menu-item-title">Phase 2: Enable</span>
 				</a>
-				<ol start="8" id="collapsePhaseTwo" class="submenu-nav collapse">
-					<li class="submenu-item">Register For Implementation Workshops</li>
-					<li class="submenu-item">Attend Online Recordings</li>
-					<li class="submenu-item">Attend Workshops and Bootcamps</li>
-					<li class="submenu-item">Request Access to Demo Platform</li>
-					<li class="submenu-item">Cloud Consulting Workshop</li>
-					<li class="submenu-item">Cloud Methodology Workshop</li>
-					<li class="submenu-item">SaaS Impl.Best Practices</li>
-					<li class="submenu-item">Enablement Readiness Review</li>
-					<li class="submenu-item">Oracle Cloud Implementation Success &amp; Training On Demand</li>
+				<ol start="7" id="collapsePhaseTwo" class="submenu-nav collapse @@nav-phase02-collapsed">
+					<li class="submenu-item @@nav-step07"><a href="page-phase2-step07.html">Register For Implementation Workshops</a></li>
+					<li class="submenu-item @@nav-step08"><a href="page-phase2-step08.html">Attend Online Recordings</a></li>
+					<li class="submenu-item @@nav-step09">Attend Workshops and Bootcamps</li>
+					<li class="submenu-item @@nav-step10">Request Access to Demo Platform</li>
+					<li class="submenu-item @@nav-step11">Cloud Consulting Workshop</li>
+					<li class="submenu-item @@nav-step12">Cloud Methodology Workshop</li>
+					<li class="submenu-item @@nav-step13">SaaS Impl.Best Practices</li>
+					<li class="submenu-item @@nav-step14">Oracle Cloud Implementation Success &amp; Training On Demand</li>
 					<li class="submenu-item">Oracle Cloud Implementation Success &amp; My Oracle Support</li>
 					<li class="submenu-item">Oracle Cloud Implementation Success &amp; Useful Sites</li>
 					<li class="submenu-item">Build a first version of Packaged Solution / FSO</li>
@@ -77,22 +80,22 @@
 					<li class="submenu-item">Delivery Readiness Review</li>
 				</ol>
 			</li>
-			<li class="menu-item">
-				<a data-toggle="collapse" data-parent="#menu-accordion" href="page-phase.html" aria-expanded="false" class="collapsed">
+			<li class="menu-item @@nav-phase03">
+				<a data-toggle="collapse" data-parent="#collapsePhaseThree" href="#collapsePhaseThree" aria-expanded="false" class="collapsed">
 					<span class="menu-item-indicator">3</span><span class="menu-item-title">Phase 3: Implement</span>
 				</a>
-				<ol start="24" id="collapsePhaseThree" class="submenu-nav collapse">
+				<ol start="23" id="collapsePhaseThree" class="submenu-nav collapse @@nav-phase03-collapsed">
 					<li class="submenu-item">SaaS - Go To Market Material</li>
 					<li class="submenu-item">Support Partner In First Project</li>
 					<li class="submenu-item">Sit Implementation Exams</li>
 					<li class="submenu-item">Conduct Success Readiness Checkpoint Review</li>
 				</ol>
 			</li>
-			<li class="menu-item">
-				<a data-toggle="collapse" data-parent="#menu-accordion" href="page-phase.html" aria-expanded="false" class="collapsed">
+			<li class="menu-item @@nav-phase04">
+				<a data-toggle="collapse" data-parent="#collapsePhaseFour" href="#collapsePhaseFour" aria-expanded="false" class="collapsed">
 					<span class="menu-item-indicator">4</span><span class="menu-item-title">Phase 4: Handover</span>
 				</a>
-				<ol start="28" id="collapsePhaseFour" class="submenu-nav collapse">
+				<ol start="27" id="collapsePhaseFour" class="submenu-nav collapse @@nav-phase04-collapsed">
 					<li class="submenu-item">Specialization</li>
 					<li class="submenu-item">Customer Success</li>
 					<li class="submenu-item">Partner Recognition</li>

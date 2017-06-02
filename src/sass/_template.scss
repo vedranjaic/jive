@@ -8,6 +8,12 @@ a {
 p {
 	line-height: 1.5em;
 }
+.hidden-xs-inline {
+	display: none;
+	@include breakpoint(sm) {
+		display: inline;
+	}
+}
 
 // Buttons
 .btn {
@@ -28,23 +34,31 @@ p {
 	&-primary {
 		background-color: $brand-red;
 		border: 0;
+		white-space: normal;
 		&:hover,
 		&:focus {
 			background-color: darken($brand-red, 5%);
 		}
 	}
 }
-.link-external {
+
+a[target="_blank"] {
 	&:after {
 		content: '\f08e';
 		font-family: $fa;
 		padding-left: 4px;
-		opacity: 0.3;
+		opacity: 0.2;
 	}
 	&:hover,
 	&:focus {
+		text-decoration: none;
 		&:after {
 			opacity: 1;
+		}
+	}
+	&.btn {
+		&:after {
+			content: '';
 		}
 	}
 }
@@ -86,7 +100,8 @@ p {
 	font-weight: 400;
 }
 .section-title {
-
+	border-bottom: 1px solid #dadada;
+	padding-bottom: 10px;
 }
 
 // Functional
@@ -99,14 +114,11 @@ p {
 .content {
 	@include transition;
 	position: relative;
-	padding-top: 40px;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-bottom: $size;
+	padding: $size;
 	margin-left: $menu-width + 50px;
 	background-color: $white;
 	.menu-closed & {
-		margin-left: 60px;
+		margin-left: 50px;
 	}
 	.page-content {
 		margin-bottom: $size;
@@ -119,9 +131,15 @@ p {
 .table-responsive {
 	margin-left: -30px;
 	margin-right: -30px;
+	th,
+	td {
+		white-space: normal !important;
+		width: 300px;
+	}
 }
 .table {
 	font-size: 13px;
+	width: auto;
 	table-layout: fixed;
 	thead {
 		&:first-child {
@@ -157,6 +175,13 @@ p {
 		}
 	}
 	// Content
+	.table-description {
+		td {
+			background-color: #f8f8f8;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+	}
 	.table-step-number {
 		display: block;
 		font-size: 1.6em;
@@ -170,6 +195,36 @@ p {
 		& > tr {
 			@include transition;
 		}
+	}
+}
+
+// --- [ PANELS ]
+// Panel
+.panel {
+	border-radius: 0;
+	// border: 0;
+	box-shadow: none;
+}
+.panel-default {
+	& > .panel-heading {
+		position: relative;
+		background-color: $brand-red;
+		color: $white;
+		border-color: $brand-red;
+		border-radius: 0;
+		.panel-icon {
+			position: absolute;
+			right: 0;
+			top: 0;
+			padding: 0 0.7em;
+			background-color: $brand-red-cta;
+			line-height: 38px;
+			font-size: 22px;
+		}
+	}
+	& > .list-group {
+		border: 1px solid $grey-light;
+		border-top: 0;	
 	}
 }
 

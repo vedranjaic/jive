@@ -5,14 +5,14 @@
 	& > li {
 		a {
 			@include transition;
-			border-radius: 0;
+			border-radius: 4px 4px 0 0;
 			background-color: $grey-dark-alt;
 			color: $white;
 			font-weight: 500;
-			margin-right: 1px;
-			padding: 20px 15px;
+			margin-right: 3px;
+			padding: 15px;
 			@include breakpoint(lg) {
-				font-size: 1.1em;
+				// font-size: 1.1em;
 			}
 			&:hover,
 			&:focus {
@@ -25,7 +25,7 @@
 			}
 			.icon {
 				@include transition;
-				font-size: 1.2em;
+				font-size: 1.1em;
 			}
 		}
 		&.active {
@@ -43,13 +43,8 @@
 	padding: $size / 2;
 	padding-top: $size;
 	height: 100%;
-	overflow-y: auto;
-	.menu-open & {
-		width: $menu-width;
-	}
-	.menu-closed & {
-		width: $menu-width / 5;
-	}
+	// overflow-y: auto;
+	width: $menu-width;
 }
 .lead {
 	padding-top: 20px;
@@ -65,6 +60,12 @@
 		}
 		& > a {
 			color: $brand-red-cta;
+			&:hover,
+			&:focus {
+				.menu-item-indicator {
+					color: $white;
+				}
+			}
 		}
 	}
 	&:before {
@@ -84,9 +85,17 @@
 	& > a {
 		font-weight: 500;
 		color: $grey;
+		&:hover,
+		&:focus {
+			.menu-item-indicator {
+				border-color: $brand-red-cta;
+				color: $brand-red-cta;
+			}
+		}
 	}
 }
 .menu-item-indicator {
+	@include transition;
 	position: relative;
 	z-index: 2;
 	display: inline-block;
@@ -103,18 +112,12 @@
 .menu-item-title {
 	display: inline-flex;
 	max-width: 80%;
-	.menu-closed & {
-		display: none;;
-	}
 }
 
 // Submenu
 .submenu-nav {
 	list-style-type: decimal-leading-zero;
 	padding-left: $size * 2 +7px;
-	.menu-closed & {
-		display: none;
-	}
 	li {
 		padding-top: $size / 6;
 		padding-bottom: $size / 6;

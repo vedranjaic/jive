@@ -1,4 +1,9 @@
 // Step
+// Page title
+.title-step-number {
+	color: $grey;
+}
+
 // Page introduction
 .page-intro {
 	margin-bottom: $size * 2;
@@ -9,22 +14,24 @@
 		@include clearfix;
 		text-transform: uppercase;
 		font-weight: normal;
-		font-size: 15px;
+		font-size: 16px;
 		font-weight: 300;
 		color: $grey;
+		margin-bottom: 13px;
 	}
 	.page-intro-download {
 		text-transform: none;
+		font-size: 14px;
 		a {
 			@include transition;
 			color: darken($grey-light, 10%);
 			&:hover,
 			&:focus {
-				color: $brand-blue;
+				color: $brand-red;
 				text-decoration: none;
 			}
 			.icon {
-				color: $brand-blue;
+				color: $brand-red;
 			}
 		}
 	}
@@ -36,6 +43,11 @@
 	&:focus {
 		opacity: 1;
 	}
+}
+
+// Overview
+.section-overview {
+	margin-bottom: $size;
 }
 
 // Coaches
@@ -66,13 +78,38 @@
 	}
 	.coach-img {
 		@include transition;
-		max-width: $size * 2;
-		max-height: $size * 2;
-		border-radius: $size;
+		max-width: $size * 2.2;
+		max-height: $size * 2.2;
+		border-radius: $size * 2;
 		float: left;
 		border: 1px solid $grey-light;
 		padding: 3px;
 		margin-right: 10px;
+	}
+}
+
+// Table
+.page-single {
+	.table {
+		thead {
+			th {
+				min-width: 150px;
+			}
+		}
+		tbody {
+			td {
+				a {
+					&.available {
+						&:before {
+							content: '\f058';
+							font-family: $fa;
+							color: $func-green;
+							padding-right: 5px;
+						}
+					}
+				}
+			} 
+		}
 	}
 }
 

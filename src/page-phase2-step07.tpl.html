@@ -1,0 +1,84 @@
+@@include('modules/_header.html', {
+	"body-class": "page-single"
+})
+
+	<!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+	@@include('modules/_nav-tabs.html', {
+		"nav-phase01": "",
+		"nav-phase02": "active",
+		"nav-phase03": "",
+		"nav-phase04": ""
+	})
+	@@include('modules/_nav.html', {
+		"nav-phase01": "",
+		"nav-phase01-collapsed": "",
+		"nav-step02": "",
+		"nav-step03": "",
+		"nav-step04": "",
+		"nav-step05": "",
+		"nav-step06": "",
+		"nav-phase02": "active",
+		"nav-phase02-collapsed": "in",
+		"nav-step07": "active",
+		"nav-step08": "",
+		"nav-step09": "",
+		"nav-step10": "",
+		"nav-step11": "",
+		"nav-step12": "",
+		"nav-step13": "",
+		"nav-phase03": "",
+		"nav-phase03-collapsed": "",
+		"nav-phase04": "",
+		"nav-phase04-collapsed": ""
+	})
+
+	<div class="content" id="07-register-for-implementation-enablement-events">
+		<header class="page-header">
+			<h2 class="page-title">
+				<span class="title-step-number">07.</span>
+				Register for Implementation Enablement Events
+			</h2>
+		</header>
+
+		<section class="page-intro">
+			@@include('modules/phase02-enable/07/_introduction.html')
+		</section>
+		<!-- /.page-intro -->
+
+		<section class="page-content">
+			<header class="section-header">
+				<p class="lead section-title">Process to register, prepare and participate in an Implementation Enablement Event</p>
+			</header>
+				
+			@@include('modules/phase02-enable/07/_table.html')
+		</section>
+		<!-- /.page-content -->
+
+		<section class="page-content">
+			<header class="section-header">
+				<p class="lead section-title">Implementation Enablement</p>
+			</header>
+				
+			@@include('modules/phase02-enable/07/_content.html')
+		</section>
+		<!-- /.page-content -->
+
+		@@include('modules/_page-nav.html', {
+			"page-prev-disabled": "disabled",
+			"page-prev-class": "step06",
+			"page-prev-number": "06",
+			"page-prev-title": "Finalize Training Plan",
+			"page-next-disabled": "",
+			"page-next-class": "step08",
+			"page-next-number": "08",
+			"page-next-title": "Attend Online Recordings for Sales, Presales &amp; Implementation"
+		})
+		
+	</div>
+	<!-- /.content -->
+
+
+@@include('modules/_footer.html')

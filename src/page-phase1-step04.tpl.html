@@ -1,0 +1,69 @@
+@@include('modules/_header.html', {
+	"body-class": "page-single"
+})
+
+	<!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+	@@include('modules/_nav-tabs.html', {
+		"nav-phase01": "active",
+		"nav-phase02": "",
+		"nav-phase03": "",
+		"nav-phase04": ""
+	})
+	@@include('modules/_nav.html', {
+		"nav-phase01": "active",
+		"nav-phase01-collapsed": "in",
+		"nav-step02": "",
+		"nav-step03": "",
+		"nav-step04": "active",
+		"nav-step05": "",
+		"nav-step06": "",
+		"nav-phase02": "",
+		"nav-phase02-collapsed": "",
+		"nav-phase03": "",
+		"nav-phase03-collapsed": "",
+		"nav-phase04": "",
+		"nav-phase04-collapsed": ""
+	})
+
+	<div class="content" id="04-decide-fso-packaged-solutions-model-and-target-function">
+		<header class="page-header">
+			<h2 class="page-title">
+				<span class="title-step-number">04.</span>
+				Decide FSO / Packaged Solutions Model and Target Function
+			</h2>
+		</header>
+
+		<section class="page-intro">
+			@@include('modules/phase01-activate/04/_introduction.html')
+		</section>
+		<!-- /.page-intro -->
+
+		<section class="page-content">
+			<header class="section-header">
+				<p class="lead section-title">Overview</p>
+			</header>
+				
+			@@include('modules/phase01-activate/04/_content.html')
+
+		</section>
+		<!-- /.page-content -->
+
+		@@include('modules/_page-nav.html', {
+			"page-prev-disabled": "",
+			"page-prev-class": "step03",
+			"page-prev-number": "03",
+			"page-prev-title": "Finalize Business Plan",
+			"page-next-disabled": "",
+			"page-next-class": "step05",
+			"page-next-number": "05",
+			"page-next-title": "Finalize Team Structure and Assign Roles & Responsibilities"
+		})
+		
+	</div>
+	<!-- /.content -->
+
+
+@@include('modules/_footer.html')

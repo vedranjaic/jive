@@ -19,6 +19,9 @@
   @media (min-width: $screen-lg-min) {
     width: $container-lg;
   }
+  @media (min-width: $screen-xl-min) {
+    width: $container-xl;
+  }
 }
 
 
@@ -81,4 +84,12 @@
 
 @media (min-width: $screen-lg-min) {
   @include make-grid(lg);
+}
+
+// XLarge grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: $screen-xl-min) {
+  @include make-grid(xl);
 }

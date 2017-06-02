@@ -1,4 +1,10 @@
 // Phase
+.phase-plans {
+	margin-bottom: 40px;
+	@include breakpoint(sm) {
+		margin-bottom: $size / 2;
+	}
+}
 // Phase steps
 .phase-steps-title {
 	background-color: $grey-light;
@@ -11,39 +17,61 @@
 	display: flex;
 	align-items: stretch;
 	justify-content: space-between;
+	flex-direction: column;
+	@include breakpoint(sm) {
+		flex-direction: row;
+		overflow: auto;
+	}
 	li {
 		background-color: $brand-red;
 		padding: 15px 20px;
-		margin-left: 5px;
-		margin-right: 5px;
+		margin: 5px 0;
 		position: relative;
-		& > a {
-			display: block;
-			color: $white;
+		color: $white;
+		@include breakpoint(sm) {
+			margin: 0 5px;
 		}
 		// SVG
 		&:before {
 			content: '';
-			background-image: url(assets/images/arrow-thin-white.svg);
+			background-image: url(assets/images/arrow-thin-white-h.svg);
 			background-size: cover;
 			position: absolute;
 			top: 0;
 			left: 0;
-			bottom: 0;
-			width: 10px;
+			right: 0;
+			height: 10px;
+			@include breakpoint(sm) {
+				background-image: url(assets/images/arrow-thin-white-v.svg);
+				top: 0;
+				left: 0;
+				bottom: 0;
+				width: 10px;
+				height: auto;
+				right: auto;
+			}
 			@include breakpoint(lg) {
 				width: 8px;
 			}
 		}
 		&:after {
 			content: '';
-			background-image: url(assets/images/arrow-thin-red.svg);
+			background-image: url(assets/images/arrow-thin-red-h.svg);
 			background-size: cover;
 			position: absolute;
-			top: 0;
-			left: 100%;
-			bottom: 0;
-			width: 10px;
+			top: 100%;
+			left: 0;
+			right: 0;
+			height: 10px;
+			@include breakpoint(sm) {
+				background-image: url(assets/images/arrow-thin-red-v.svg);
+				top: 0;
+				left: 100%;
+				bottom: 0;
+				width: 10px;
+				height: auto;
+				right: 0;
+			}
 			@include breakpoint(lg) {
 				width: 8px;
 			}
@@ -52,13 +80,48 @@
 			margin-left: 0;
 			&:before {
 				background-image: none;
+				width: 0;
 			}
 		}
 		&:last-child {
 			margin-right: 0;
 			&:after {
 				background-image: none;
+				width: 0;
+			}
+		}
+		&.disabled {
+			background-color: $grey-light;
+			color: $grey;
+			&:after {
+				content: '';
+				background-image: url(assets/images/arrow-thin-grey-h.svg);
+				background-size: cover;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				height: 10px;
+				@include breakpoint(sm) {
+					background-image: url(assets/images/arrow-thin-grey-v.svg);
+					top: 0;
+					left: 100%;
+					bottom: 0;
+					width: 10px;
+					height: auto;
+					right: 0;
+				}
+				@include breakpoint(lg) {
+					width: 8px;
+				}
 			}
 		}
 	}
+}
+.phase-plan {
+	&.phase-review {
+		li {
+			background-color: $brand-red-cta;
+		}
+	}	
 }
