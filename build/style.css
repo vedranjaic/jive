@@ -7672,13 +7672,12 @@ a[target="_blank"].btn:after {
 
 .table {
   font-size: 13px;
-  width: auto;
   table-layout: fixed;
 }
-.table thead:first-child > tr th:first-child {
+.table thead:first-child > tr th:first-child:not(.text-center) {
   padding-left: 30px;
 }
-.table thead:first-child > tr th:last-child {
+.table thead:first-child > tr th:last-child:not(.text-center) {
   padding-right: 30px;
 }
 .table thead th {
@@ -7709,6 +7708,13 @@ a[target="_blank"].btn:after {
 .table-hover > tbody > tr {
   transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
+}
+
+.table-width {
+  width: auto;
+}
+.table-width thead th {
+  min-width: 150px;
 }
 
 .panel {
@@ -7881,6 +7887,9 @@ a[target="_blank"].btn:after {
 }
 .submenu-item.active a {
   color: #e00024;
+}
+.submenu-item.disabled:hover:before, .submenu-item.disabled:focus:before {
+  background-color: transparent;
 }
 .submenu-item > a {
   color: #777777;
@@ -8126,9 +8135,6 @@ a[target="_blank"].btn:after {
   margin-right: 10px;
 }
 
-.page-single .table thead th {
-  min-width: 150px;
-}
 .page-single .table tbody td a.available:before {
   content: '\f058';
   font-family: "FontAwesome";

@@ -139,17 +139,20 @@ a[target="_blank"] {
 }
 .table {
 	font-size: 13px;
-	width: auto;
 	table-layout: fixed;
 	thead {
 		&:first-child {
 			& > tr {
 				th {
 					&:first-child {
-						padding-left: $size;
+						&:not(.text-center) {
+							padding-left: $size;
+						}
 					}
 					&:last-child {
-						padding-right: $size;
+						&:not(.text-center) {
+							padding-right: $size;
+						}
 					}
 				}
 			}
@@ -194,6 +197,15 @@ a[target="_blank"] {
 	& > tbody {
 		& > tr {
 			@include transition;
+		}
+	}
+}
+// Table auto width on too wide cells
+.table-width {
+	width: auto;
+	thead {
+		th {
+			min-width: 150px;
 		}
 	}
 }

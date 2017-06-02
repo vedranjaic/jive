@@ -153,6 +153,14 @@
 			color: $brand-red-cta;
 		}
 	}
+	&.disabled {
+		&:hover,
+		&:focus {
+			&:before {
+				background-color: transparent;
+			}
+		}
+	}
 	& > a {
 		color: $grey;
 		&:hover,
