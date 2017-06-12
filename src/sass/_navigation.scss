@@ -18,9 +18,9 @@
 			&:focus {
 				background-color: $grey-dark;
 				border-color: transparent;
-				border-bottom-color: $brand-red-cta;
+				border-bottom-color: $brand-red;
 				.icon {
-					color: $brand-red-cta;
+					color: $brand-red;
 				}
 			}
 			.icon {
@@ -30,7 +30,7 @@
 		}
 		&.active {
 			a {
-				color: $brand-red-cta;
+				color: $brand-red;
 			}
 		}
 	}
@@ -59,7 +59,7 @@
 			color: $white;
 		}
 		& > a {
-			color: $brand-red-cta;
+			color: $brand-red;
 			&:hover,
 			&:focus {
 				.menu-item-indicator {
@@ -88,8 +88,8 @@
 		&:hover,
 		&:focus {
 			.menu-item-indicator {
-				border-color: $brand-red-cta;
-				color: $brand-red-cta;
+				border-color: $brand-red;
+				color: $brand-red;
 			}
 		}
 	}
@@ -108,6 +108,9 @@
 	margin-right: 10px;
 	background-color: $white;
 	color: $grey;
+	.icon {
+		margin-top: 7px;
+	}
 }
 .menu-item-title {
 	display: inline-flex;
@@ -141,16 +144,16 @@
 	&.active,
 	&:hover {
 		&:before {
-			background-color: $brand-red-cta;
+			background-color: $brand-red;
 		}
 		a {
-			color: $brand-red-cta;
+			color: $brand-red;
 		}
 	}
 	&.active {
 		font-weight: 500;
 		a {
-			color: $brand-red-cta;
+			color: $brand-red;
 		}
 	}
 	&.disabled {

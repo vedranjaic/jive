@@ -91,10 +91,17 @@
 // Table
 .page-single {
 	.table {
+		thead {
+			.double-column {
+				min-width: 600px;
+			}
+		}
 		tbody {
 			td {
 				a {
 					&.available {
+						text-align: center;
+						display: block;
 						&:before {
 							content: '\f058';
 							font-family: $fa;
@@ -102,8 +109,38 @@
 							padding-right: 5px;
 						}
 					}
+					&.not-available {
+						text-decoration: none;
+						color: $grey;
+						&:before {
+							content: '\f057';
+							font-family: $fa;
+							color: $func-red;
+							padding-right: 5px;
+						}
+					}
+					&.coach-link {
+						color: $brand-red;
+						&:before {
+							content: '\f2be';
+							font-family: $fa;
+							padding-right: 5px;
+							color: $grey;
+						}
+					}
 				}
 			} 
+		}
+		.table-notice {
+			td {
+				padding: 15px;
+				background-color: $brand-red;
+				color: $white;
+				font-size: 14px;
+			}
+		}
+		.table-highlight {
+			background-color: lighten($grey-light, 10%);
 		}
 	}
 }
