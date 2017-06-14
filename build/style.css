@@ -7552,6 +7552,26 @@ button.close {
 a {
   color: #1f4f82;
 }
+a[target="_blank"]:after {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+  content: '\f08e';
+  font-family: "FontAwesome";
+  padding-left: 4px;
+  opacity: 0.2;
+}
+a[target="_blank"]:hover, a[target="_blank"]:focus {
+  text-decoration: none;
+}
+a[target="_blank"]:hover:after, a[target="_blank"]:focus:after {
+  opacity: 1;
+}
+a[target="_blank"].btn:after {
+  content: '';
+}
+.submenu-nav a[target="_blank"]:after, .nav-tabs a[target="_blank"]:after, .page-navigation a[target="_blank"]:after {
+  content: '';
+}
 
 p {
   line-height: 1.5em;
@@ -7587,22 +7607,6 @@ p {
 }
 .btn-primary:hover, .btn-primary:focus {
   background-color: #c70020;
-}
-
-a[target="_blank"]:after {
-  content: '\f08e';
-  font-family: "FontAwesome";
-  padding-left: 4px;
-  opacity: 0.2;
-}
-a[target="_blank"]:hover, a[target="_blank"]:focus {
-  text-decoration: none;
-}
-a[target="_blank"]:hover:after, a[target="_blank"]:focus:after {
-  opacity: 1;
-}
-a[target="_blank"].btn:after {
-  content: '';
 }
 
 .dropdown-menu {
@@ -7650,7 +7654,7 @@ a[target="_blank"].btn:after {
   box-sizing: border-box;
   position: relative;
   padding: 30px;
-  margin-left: 350px;
+  margin-left: 320px;
   background-color: #ffffff;
 }
 .menu-closed .content {
@@ -7731,8 +7735,20 @@ a[target="_blank"].btn:after {
 .table-width {
   width: auto;
 }
+@media (min-width: 1200px) {
+  .table-width {
+    width: 100%;
+  }
+}
 .table-width thead th {
   min-width: 150px;
+}
+.table-width tbody td {
+  min-width: 150px;
+}
+
+.td-width {
+  min-width: 300px !important;
 }
 
 .panel {
@@ -7742,9 +7758,9 @@ a[target="_blank"].btn:after {
 
 .panel-default > .panel-heading {
   position: relative;
-  background-color: #e00024;
-  color: #ffffff;
-  border-color: #e00024;
+  background-color: #dadada;
+  color: #161616;
+  border-color: #dadada;
   border-radius: 0;
 }
 .panel-default > .panel-heading .panel-icon {
@@ -7752,9 +7768,12 @@ a[target="_blank"].btn:after {
   right: 0;
   top: 0;
   padding: 0 0.7em;
-  background-color: #e00024;
   line-height: 38px;
   font-size: 22px;
+}
+.panel-default > .panel-heading .panel-icon .icon {
+  padding-top: 7px;
+  opacity: 0.3;
 }
 .panel-default > .list-group {
   border-top: 0;
@@ -7801,13 +7820,26 @@ a[target="_blank"].btn:after {
   color: #e00024;
 }
 
+.toggle-menu span:not(.menu-item-indicator) {
+  font-weight: normal;
+  font-size: 11px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.toggle-menu.active .menu-item-indicator {
+  border-color: #e00024;
+}
+.toggle-menu.active .icon {
+  color: #e00024;
+}
+
 .nav-main {
   position: absolute;
   background-color: #ffffff;
   padding: 15px;
   padding-top: 30px;
   height: 100%;
-  width: 300px;
+  width: 270px;
 }
 
 .lead {

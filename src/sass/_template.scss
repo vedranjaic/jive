@@ -4,6 +4,34 @@ body {
 }
 a {
 	color: $brand-blue;
+	&[target="_blank"] {
+		&:after {
+			@include transition;
+			content: '\f08e';
+			font-family: $fa;
+			padding-left: 4px;
+			opacity: 0.2;
+		}
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			&:after {
+				opacity: 1;
+			}
+		}
+		&.btn {
+			&:after {
+				content: '';
+			}
+		}
+		.submenu-nav &,
+		.nav-tabs &,
+		.page-navigation & {
+			&:after {
+				content: '';
+			}
+		}
+	}
 }
 p {
 	line-height: 1.5em;
@@ -38,27 +66,6 @@ p {
 		&:hover,
 		&:focus {
 			background-color: darken($brand-red, 5%);
-		}
-	}
-}
-
-a[target="_blank"] {
-	&:after {
-		content: '\f08e';
-		font-family: $fa;
-		padding-left: 4px;
-		opacity: 0.2;
-	}
-	&:hover,
-	&:focus {
-		text-decoration: none;
-		&:after {
-			opacity: 1;
-		}
-	}
-	&.btn {
-		&:after {
-			content: '';
 		}
 	}
 }
@@ -223,11 +230,22 @@ a[target="_blank"] {
 // Table auto width on too wide cells
 .table-width {
 	width: auto;
+	@include breakpoint(lg) {
+		width: 100%;
+	}
 	thead {
 		th {
 			min-width: 150px;
 		}
 	}
+	tbody {
+		td {
+			min-width: 150px;
+		}
+	}
+}
+.td-width {
+	min-width: 300px !important;
 }
 
 // --- [ PANELS ]
@@ -240,18 +258,21 @@ a[target="_blank"] {
 .panel-default {
 	& > .panel-heading {
 		position: relative;
-		background-color: $brand-red;
-		color: $white;
-		border-color: $brand-red;
+		background-color: $grey-light;
+		color: $black;
+		border-color: $grey-light;
 		border-radius: 0;
 		.panel-icon {
 			position: absolute;
 			right: 0;
 			top: 0;
 			padding: 0 0.7em;
-			background-color: $brand-red;
 			line-height: 38px;
 			font-size: 22px;
+			.icon {
+				padding-top: 7px;
+				opacity: 0.3;
+			}
 		}
 	}
 	& > .list-group {

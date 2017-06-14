@@ -37,6 +37,22 @@
 }
 
 // Nav main
+.toggle-menu {
+	span:not(.menu-item-indicator) {
+		font-weight: normal;
+		font-size: 11px;
+		text-transform: uppercase;
+		opacity: 0.8
+	}
+	&.active {
+		.menu-item-indicator {
+			border-color: $brand-red;
+		}
+		.icon {
+			color: $brand-red;
+		}
+	}
+}
 .nav-main {
 	position: absolute;
 	background-color: $white;

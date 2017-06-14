@@ -12,12 +12,14 @@ $(function () {
 
 
 // Main menu toggle
-$('.toggle-menu').click(function() {
+$('.toggle-menu').click(function(e) {
 	$('body').toggleClass('menu-open menu-closed');
 	// Nav-tabs toggle
-	$(this).children('.icon').toggleClass('fa-ellipsis-v fa-th-list');
+	$(this).children('.menu-item-indicator').children('.icon').toggleClass('fa-ellipsis-v fa-th-list');
+	$(this).toggleClass('active');
 	// Nav-main toggle
 	// $(this).children().children('.icon').toggleClass('fa-ellipsis-v fa-th-list');
+	e.preventDefault();
 });
 
 // Menu tabs toggle
